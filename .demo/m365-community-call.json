@@ -1,0 +1,156 @@
+{
+  "$schema": "https://elio.dev/demo-time.schema.json",
+  "title": "M365 Community call",
+  "description": "Demonstration how you can generate a Graph like client for your own api",
+  "demos": [
+    {
+      "title": "1. 🖥️ Open Slides",
+      "steps": [
+        {
+          "action": "executeVSCodeCommand",
+          "command": "extension.liveServer.goOnline"
+
+        },
+        {
+          "action": "snippet",
+          "contentPath": "./defaults/show_slide.json",
+          "args": {
+            "SLIDES_URL": "http://127.0.0.1:5500/slides/m365-community-call.html"
+          }
+        }
+      ]
+    },
+    {
+      "title": "2. 🖥️ Introduction",
+      "steps": [
+        {
+          "action": "snippet",
+          "contentPath": "./defaults/show_slide.json",
+          "args": {
+            "SLIDES_URL": "http://127.0.0.1:5500/slides/m365-community-call.html#2"
+          }
+        }
+      ]
+    },
+    {
+      "title": "3. 🖥️ Goal",
+      "steps": [
+        {
+          "action": "snippet",
+          "contentPath": "./defaults/show_slide.json",
+          "args": {
+            "SLIDES_URL": "http://127.0.0.1:5500/slides/m365-community-call.html#3"
+          }
+        }
+      ]
+    },
+    {
+      "title": "4. 🖥️ API",
+      "steps": [
+        {
+          "action": "snippet",
+          "contentPath": "./defaults/show_slide.json",
+          "args": {
+            "SLIDES_URL": "http://127.0.0.1:5500/slides/m365-community-call.html#4"
+          }
+        }
+      ]
+    },
+    {
+      "title": "5. 🌐 Actual API",
+      "steps": [
+        {
+          "action": "snippet",
+          "contentPath": "./defaults/show_slide.json",
+          "args": {
+            "SLIDES_URL": "https://demo-api.svrooij.io/swagger/index.html"
+          }
+        }
+      ]
+    },
+    {
+      "title": "6. 🖥️ Generate a client",
+      "steps": [
+        {
+          "action": "snippet",
+          "contentPath": "./defaults/show_slide.json",
+          "args": {
+            "SLIDES_URL": "http://127.0.0.1:5500/slides/m365-community-call.html#5"
+          }
+        }
+      ]
+    },
+    {
+      "title": "7. 📜 Generate actual client",
+      "steps": [
+        {
+          "action": "executeTerminalCommand",
+          "command": "cd src\\Svrooij.Users.Client"
+        },
+        {
+          "action": "executeTerminalCommand",
+          "command": "dotnet kiota generate -l CSharp -c MyApiClient -n Svrooij.Users.Client -d https://demo-api.svrooij.io/swagger/v1/swagger.json -o Generated --co"
+        }
+      ]
+    },
+    {
+      "title": "8. 🖥️ Call the API",
+      "steps": [
+        {
+          "action": "snippet",
+          "contentPath": "./defaults/show_slide.json",
+          "args": {
+            "SLIDES_URL": "http://127.0.0.1:5500/slides/m365-community-call.html#6"
+          }
+        }
+      ]
+    },
+    {
+      "title": "9. 📜 Show calling the api",
+      "steps": [
+        {
+          "action": "open",
+          "path": "src/Svrooij.Console/Program.cs"
+        },
+        {
+          "action": "highlight",
+          "path": "src/Svrooij.Console/Program.cs",
+          "position": "14:16"
+        },
+        {
+          "action": "executeTerminalCommand",
+          "command": "cd ../.."
+        },
+        {
+          "action": "executeTerminalCommand",
+          "command": "dotnet run --project src/Svrooij.Console/Svrooij.Console.csproj"
+        }
+      ]
+    },
+    {
+      "title": "10. 📜 Call api with client",
+      "steps": [
+        {
+          "action": "insert",
+          "path": "src/Svrooij.Console/Program.cs",
+          "position": "1",
+          "content": "using Svrooij.Users.Client;\r\nusing Microsoft.Kiota.Abstractions;\r\nusing Microsoft.Kiota.Abstractions.Authentication;\r\nusing Microsoft.Kiota.Http.HttpClientLibrary;",
+          "lineInsertionDelay": 50
+        },
+        {
+          "action": "insert",
+          "path": "src/Svrooij.Console/Program.cs",
+          "position": "21",
+          "content": "// New API client\r\nvar apiClient = new MyApiClient(\r\n  new HttpClientRequestAdapter(\r\n    new AnonymousAuthenticationProvider(),\r\n    httpClient: httpClient));\r\n\r\n// Load the users with the API client\r\nvar users = await apiClient.Users.GetAsync();\r\n\r\nConsole.WriteLine(users.Count);",
+          "lineInsertionDelay": 200
+        },
+        {
+          "action": "highlight",
+          "path": "src/Svrooij.Console/Program.cs",
+          "position": "21:25"
+        }
+      ]
+    }
+
+  ]
+}

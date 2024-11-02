@@ -1,0 +1,9 @@
+{
+	"recommendations": [
+		"eliostruyf.vscode-demo-time",
+    "marp-team.marp-vscode",
+    "ms-dotnettools.vscode-dotnet-pack",
+    "ms-dotnettools.csdevkit",
+    "ritwickdey.LiveServer"
+	]
+}

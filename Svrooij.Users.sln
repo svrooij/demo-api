@@ -3,7 +3,18 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35219.272
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Svrooij.Users.Api", "src\Svrooij.Users.Api\Svrooij.Users.Api.csproj", "{BDDBE994-DDF1-43FC-84A3-7149853315D6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Svrooij.Users.Api", "src\Svrooij.Users.Api\Svrooij.Users.Api.csproj", "{BDDBE994-DDF1-43FC-84A3-7149853315D6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Svrooij.Users.Client", "src\Svrooij.Users.Client\Svrooij.Users.Client.csproj", "{7DE68647-12C7-42A5-9B87-B6424B9A660E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{98D91BCF-59BA-4899-8C3D-A6EE0EC1D042}"
+	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
+		.gitignore = .gitignore
+		README.md = README.md
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Svrooij.Console", "src\Svrooij.Console\Svrooij.Console.csproj", "{45C93E60-51F3-41D0-9458-FB009ABB51A5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +26,14 @@ Global
 		{BDDBE994-DDF1-43FC-84A3-7149853315D6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BDDBE994-DDF1-43FC-84A3-7149853315D6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BDDBE994-DDF1-43FC-84A3-7149853315D6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7DE68647-12C7-42A5-9B87-B6424B9A660E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7DE68647-12C7-42A5-9B87-B6424B9A660E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7DE68647-12C7-42A5-9B87-B6424B9A660E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7DE68647-12C7-42A5-9B87-B6424B9A660E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{45C93E60-51F3-41D0-9458-FB009ABB51A5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{45C93E60-51F3-41D0-9458-FB009ABB51A5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{45C93E60-51F3-41D0-9458-FB009ABB51A5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{45C93E60-51F3-41D0-9458-FB009ABB51A5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
