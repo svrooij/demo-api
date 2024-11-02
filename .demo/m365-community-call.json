@@ -131,6 +131,13 @@
       "title": "10. 📜 Call api with client",
       "steps": [
         {
+          "action": "replace",
+          "path": "src/Svrooij.Console/Program.cs",
+          "position": "14:16",
+          "content": "// var usersResponse = await httpClient.GetStringAsync(\"users\");\r\n// Console.WriteLine(usersResponse);",
+          "lineInsertionDelay": 0
+        },
+        {
           "action": "insert",
           "path": "src/Svrooij.Console/Program.cs",
           "position": "1",
