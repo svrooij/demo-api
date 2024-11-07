@@ -92,7 +92,7 @@
         },
         {
           "action": "open",
-          "path": "src/Svrooij.Users.Client/MyApiClient.cs"
+          "path": "src/Svrooij.Users.Client/Generated/MyApiClient.cs"
         }
       ]
     },
@@ -135,7 +135,11 @@
       "steps": [
         {
           "action": "executeTerminalCommand",
-          "command": "git checkout head src\\Svrooij.Console\\Program.cs"
+          "command": "git checkout 3c14073 -- .\\src\\Svrooij.Console\\Program.cs"
+        },
+        {
+          "action": "executeVSCodeCommand",
+          "command": "workbench.action.closePanel"
         },
         {
           "action": "replace",
